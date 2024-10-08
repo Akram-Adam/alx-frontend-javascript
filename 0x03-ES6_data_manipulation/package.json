@@ -2,7 +2,7 @@
   "name": "0x03-es6_data_manipulation",
   "version": "1.0.0",
   "main": "0-get_list_students.js",
-
+  "type":"module",
   "scripts": {
     "test":"jest",
     "lint": "eslint .",
