@@ -11,7 +11,8 @@ module.exports =  [
       'no-unused-vars': 'off',     // Error on unused variables
       'indent': ['error', 2],        // Enforce 2 spaces for indentation
       'semi': ['error', 'always'],   // Enforce semicolons at the end of statements
-      'quotes': ['error', 'single']  // Enforce single quotes for strings
+      'quotes': ['error', 'single'],  // Enforce single quotes for strings
+      'eol-last': ['error', 'always'],
     }
   }
 ];
