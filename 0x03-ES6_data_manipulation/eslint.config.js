@@ -1,18 +1,37 @@
-module.exports =  [
-  {
-    files: ['**/*.js'],
-    languageOptions: {
-      ecmaVersion: 2021,
-      sourceType: 'module',
-    },
-    rules: {
-      'no-console': 'off',          // Warn when using console statements
-      'prefer-const': 'error',       // Enforce const for variables that are not reassigned
-      'no-unused-vars': 'off',     // Error on unused variables
-      'indent': ['error', 2],        // Enforce 2 spaces for indentation
-      'semi': ['error', 'always'],   // Enforce semicolons at the end of statements
-      'quotes': ['error', 'single'],  // Enforce single quotes for strings
-      'eol-last': ['error', 'always'],
+module.exports = {
+  env: {
+    browser: false,
+    es6: true,
+    jest: true,
+  },
+  extends: [
+    'airbnb-base',
+    'plugin:jest/all',
+  ],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
+  plugins: ['jest'],
+  rules: {
+    'max-classes-per-file': 'off',
+    'no-underscore-dangle': 'off',
+    'no-console': 'off',
+    'no-shadow': 'off',
+    'no-restricted-syntax': [
+      'error',
+      'LabeledStatement',
+      'WithStatement',
+    ],
+  },
+  overrides:[
+    {
+      files: ['*.js'],
+      excludedFiles: 'babel.config.js',
     }
-  }
-];
+  ]
+};
